@@ -89,6 +89,26 @@ html {
         border: 2px solid white;
         }
     }
+    .blue-green-button-light-background {
+        --c:#00FFF7;
+        --p:10%;
+        --l:10px;
+        --a:10deg;
+        cursor:pointer;
+        padding: 9px 20px 5px 20px;
+        border-radius: 20px;
+        font-weight: 900;
+        color: black !important;
+        transition:--c 0.7s,--p 0.5s,--l 0.5s;
+        background:linear-gradient(90deg, var(--c) var(--p),#00FFA0);
+        text-decoration: none;
+        &:hover {
+            --c:black;
+            --p:100%;
+            --l:100%;
+            color: white !important;
+        }
+    }
 
     /* other */
     #menu-bar {
