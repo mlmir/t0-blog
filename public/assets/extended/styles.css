@@ -1,0 +1,116 @@
+@property --c {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: #00FFF7;
+}
+@property --p {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 10%;
+}
+@property --l {
+  syntax: '<length>';
+  inherits: false;
+  initial-value: 10px;
+}
+@property --cghostlight {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: transparent;
+}
+@property --cghostdark {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: #000;
+}
+
+html {
+    font-family: "Overpass", sans-serif;
+    text-underline-offset: 4px;
+    /* backgrounds */
+    .bg-black-to-gray {
+        background: linear-gradient(104deg, black 25%, #32343B 67.88%);
+        color: white;
+    }
+    .bg-gray-to-black {
+        background: linear-gradient(90deg, #3c3d42, black);
+        border-bottom-width: 10px;
+        border-bottom-style: solid; 
+        border-image: linear-gradient(90deg, #F8E201, #ff4fff);;
+        border-image-slice: 1;
+        color: white;
+    }
+    .bg-saltwater-to-aquamarine {
+        background: linear-gradient(90deg, #1DA7FD 0%, #08F5DA 100%);
+    }
+    .bg-white-hover-gray {
+        background-color: white;
+        color: black;
+        &:hover {
+            background-color: #e4e9f7;
+        }
+    }
+    .bg-white {
+        background-color: white;
+        color: black;
+    }
+    .bg-black {
+        color: white;
+    }
+    .bg-saltwater {
+        background-color: #1AAAFF;
+    }
+    .bg-light-carbon {
+        background-color: #e4e9f7;
+        color: black;
+    }
+
+    /* buttons */
+    .blue-green-button {
+        --c:#00FFF7;
+        --p:10%;
+        --l:10px;
+        --a:10deg;
+        cursor:pointer;
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 9px 20px 5px 20px;
+        border-radius: 20px;
+        font-weight: 900;
+        color: black !important;
+        border: 2px solid black;
+        transition:--c 0.7s,--p 0.5s,--l 0.3s;
+        background:linear-gradient(90deg, var(--c) var(--p),#00FFA0);
+        &:hover {
+        --c:black;
+        --p:100%;
+        --l:100%;
+        color: white !important;
+        border: 2px solid white;
+        }
+    }
+
+    /* other */
+    #menu-bar {
+        a {
+            &:hover {
+                text-decoration: underline;
+                text-underline-offset: 4px;
+            }   
+            
+        }
+    }
+    .hover-zoom {
+        img {
+            max-width: 101%; /* keeps weird blip from happening */
+            z-index: 100;
+            position: relative;
+            transition: transform .5s;  
+        }    
+        &:hover {
+            img {
+                transform: scale(1.1);
+            }   
+        }
+    }
+}
